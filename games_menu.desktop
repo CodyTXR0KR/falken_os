@@ -4,7 +4,7 @@ Comment=Games Folder
 Type=Application
 Icon=pcsx-icon
 Terminal=false
-Exec=terminator -p falkenos -l falkenos --command="games" --title="FalkenOS" --geometry=800x600+160+80
+Exec=terminator -p falkenos -l falkenos --command="games.py" --title="FalkenOS" --geometry=800x600+160+80
 OnlyShowIn=Unity;
 X-UnityGenerated=true
 
