@@ -1,0 +1,26 @@
+[Desktop Entry]
+Name[en_US]=Games
+Comment=Games Folder
+Type=Application
+Icon=pcsx-icon
+Terminal=false
+Exec=terminator -p falkenos -l falkenos --command="games" --title="FalkenOS" --geometry=800x600+160+80
+OnlyShowIn=Unity;
+X-UnityGenerated=true
+
+X-Ayatana-Desktop-Shortcuts=Terraria;DontStarveTogether;KillingFloor;
+
+[Terraria Shortcut Group]
+Name=Terraria
+Exec=steam steam://rungameid/105600
+TargetEnvironment=Unity
+
+[DontStarveTogether Shortcut Group]
+Name=Don't Starve Together
+Exec=steam steam://rungameid/322330
+TargetEnvironment=Unity
+
+[KillingFloor Shortcut Group]
+Name=Killing Floor
+Exec=steam steam://rungameid/1250
+TargetEnvironment=Unity
