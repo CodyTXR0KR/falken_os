@@ -14,6 +14,8 @@ GREETING = '\n  Greetings {0},\n\n    Shall we play a game?\n\n'.format(username
 PHOENETIC_GREETING = 'Greetings {0}, shall we play a game?'.format(username)
 
 # Dictionary used to populate games menu.  New options are added here.
+# The dictionary key is the displayed string for a selection, and the keys
+# value is the terminal command to launch the desired application.
 GAMES = {
     "Chess": "google-chrome lichess.org",
     "Launch Steam": "steam",
@@ -23,9 +25,11 @@ GAMES = {
     "Global Thermonuclear War": "\n  A strange game.\n  The only winning move is not to play.\n  How about a nice game of Chess?\n",
 }
 
-# Text-to-speech string also used for display due to lack of formatting chars
+# Text-to-speech string for GTW
 PHOENETIC_DESC = 'A strange game. The only winning move is not to play. How about a nice game of Chess?'
 
+
+# Simulates a user typing on a keyboard
 def slow_print(string, speed=0.05):
     for char in string:
         sys.stdout.write(char)
@@ -33,11 +37,13 @@ def slow_print(string, speed=0.05):
         time.sleep(speed)
 
 
+# 'spd-say' is the TTS engine I use, and can be replaced with your preference
 def tts(string):
     args = ['spd-say', '"{0}"'.format(string)]
     subprocess.Popen(args)
 
 
+# hacky way to 'index' an unordered dictionary for a selection menu
 def selection_menu():
     selection_menu = {}
     for i, key in enumerate(GAMES):
@@ -58,6 +64,7 @@ def get_selection(selection_menu):
         continue
 
 
+# If user input is anything but an integer fail validation
 def validate_selection(user_input):
     try:
         val = int(user_input)
